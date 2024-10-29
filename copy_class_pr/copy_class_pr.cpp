@@ -17,6 +17,12 @@ int main()
 	//cout << "max" << a.min() << endl;
 	//cout << "min" << a.max() << endl;
 
-	String a1{(char*)"Hello world!"},
+	String s1{(char*)"Hello world!"},
+		s2 = move(s1);
+
+	Array a1(5),
 		a2 = move(a1);
+	a1.display();
+	a2.display();
+
 }

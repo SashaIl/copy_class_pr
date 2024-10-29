@@ -10,7 +10,12 @@ class Array
 	int* arr;
 
 public:
-	Array(int size_f) : size{ size }, arr{ size ? new int[size + 1] : nullptr } {}
+	Array(int size_f) : size{ size_f }, arr{ size_f ? new int[size_f + 1] : nullptr } 
+	{
+		for (int i = 0; i < size; i++) {
+			arr[i] = i + 1;
+		}
+	}
 	Array() :Array{ 0 } {}
 
 	~Array() { delete[] arr; }
@@ -52,6 +57,13 @@ public:
 			arr[i] += num;
 		}
 		return *this;
+	}
+
+	Array(Array&& obj) {
+		size = obj.size;
+		arr = obj.arr;
+		obj.size = 0;
+		obj.arr = nullptr;
 	}
 
 };
