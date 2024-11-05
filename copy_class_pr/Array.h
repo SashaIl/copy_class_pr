@@ -13,7 +13,7 @@ public:
 	Array(int size_f) : size{ size_f }, arr{ size_f ? new int[size_f + 1] : nullptr } 
 	{
 		for (int i = 0; i < size; i++) {
-			arr[i] = i + 1;
+			arr[i] = i + 1 ;
 		}
 	}
 	Array() :Array{ 0 } {}
@@ -29,10 +29,10 @@ public:
 	double max();
 	double min();
 	
-	explicit operator int() const {
+	operator int() const {
 		int sum = 0;
 		for (int i = 0; i < size; i++) {
-			sum += arr[i];
+			sum += arr[i] ;
 		}
 		return sum;
 	}
@@ -45,11 +45,11 @@ public:
 		}
 	}
 
-	Array& operator[](int index) {
+	int& operator[](int index) {
 		if (index > size) {
 			cout << "eror\n";
 		}
-		return *this;
+		return arr[index];
 	}
 
 	Array& operator() (int num) {
