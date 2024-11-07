@@ -33,5 +33,19 @@ public:
 		obj.str = nullptr;
 		obj.count = 0;
 	}
+
+	char operator[](int index) {
+		return str[index];
+	}
+
+	int operator()(char symbol) {
+		for (int i = 0; i < strlen(str); i++) {
+			char arr[2];
+			if (str[i] == symbol) {
+				return i;
+			}
+		}
+		return -1;
+	}
 };
 

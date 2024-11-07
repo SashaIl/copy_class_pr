@@ -8,14 +8,16 @@ int main()
 	//char* str{ new char[12] {"Hello world"} };
 	//String s(str);
 
-	//Array a;
+	Array arr(10);
 
-	//a.input_nums();
-	//a.change_size();
-	//a.sort_arr();
-	//a.display();
-	//cout << "max" << a.min() << endl;
-	//cout << "min" << a.max() << endl;
+	arr.display();
+	cout << "index 9 = " << arr[9] << "\n";
+	int size = arr;
+	cout << "sum of array = " << size << "\n";
+	cout << "\n\tadded 5:\n";
+	arr(5);
+	arr.display();
+
 
 	String a1{(char*)"Hello world!"},
 		a2 = move(a1);
